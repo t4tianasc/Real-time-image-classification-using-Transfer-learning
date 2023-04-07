@@ -1,0 +1,97 @@
+* {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+table,
+th,
+td {
+  border: 0.5px solid black;
+  text-align: left;
+  justify-content: center;
+}
+
+table {
+  table-layout: fixed;
+  margin-top: 10%;
+  background: rgba(45, 172, 49, 0.1);
+}
+
+.th-prediction {
+  width: 30%;
+}
+
+.th-probability {
+  width: 20%;
+}
+
+td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 30px;
+  height: 30px;
+}
+
+/* Body Styles */
+body {
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Container Styles */
+.container {
+  margin-top: 7%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* height: 100vh; */
+}
+
+.child-container {
+  width: 40%;
+  padding: 2rem;
+  /* box-sizing: border-box; */
+  margin: 10px;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.child-container-webcam {
+  height: 30%;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Video Styles */
+video {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
+
+/* Input Styles */
+input[type="text"] {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button Styles */
+button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+#cam-description2 {
+  min-height: 10%;
+  background: rgba(45, 172, 49, 0.1);
+}

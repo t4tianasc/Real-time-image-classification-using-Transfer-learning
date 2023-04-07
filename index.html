@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Real-time image classification and Transfer learning</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="child-container-webcam">
+      <video autoplay="" playsinline muted id="webcam" width="224" height="224"></video>
+    </div>
+    <div class="child-container">
+      <div id="cam-description1">
+        <h3>Using the TensorFlow.js library and the MobileNet pre-trained model</h3>
+        <table id="predictions-table" style="width:100%">
+          <tr>
+            <th class="th-prediction">Prediction</th>
+            <th class="th-probability">Probability</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div><br /><br /><br />
+    </div>
+    <div class="child-container">
+      <h3>Using our customized KNN classifier:</h3><br />
+      <div id="cam-description2"></div>
+      <br />
+      <input type="text" id="input_label" name="input_label">
+      <button id="add_new_label" onclick="addNewLabel();">Add image label</button>
+      <div>Added labels:
+        <div id="added_classes_list"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="script.js?v=18"></script>
+  <br />
+  <br />
+
+</body>
+
+</html>
