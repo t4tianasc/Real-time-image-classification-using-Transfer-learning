@@ -15,8 +15,8 @@
       <video autoplay="" playsinline muted id="webcam" width="224" height="224"></video>
     </div>
     <div class="child-container">
+      <h3>Using the TensorFlow.js library and the MobileNet pre-trained model</h3>
       <div id="cam-description1">
-        <h3>Using the TensorFlow.js library and the MobileNet pre-trained model</h3>
         <table id="predictions-table" style="width:100%">
           <tr>
             <th class="th-prediction">Prediction</th>
@@ -41,15 +41,16 @@
       <h3>Using our customized KNN classifier:</h3><br />
       <div id="cam-description2"></div>
       <br />
-      <input type="text" id="input_label" name="input_label">
+      <input type="text" id="input-label" name="input-label">
       <button id="add_new_label" onclick="addNewLabel();">Add image label</button>
-      <div>Added labels:
-        <div id="added_classes_list"></div>
+      <div id="div-added-labels">
+        <h4>Added labels:</h4>
+        <div id="list-added-labels"></div>
       </div>
     </div>
   </div>
   </div>
-  <script src="script.js?v=18"></script>
+  <script src="script.js?v=19"></script>
   <br />
   <br />
 

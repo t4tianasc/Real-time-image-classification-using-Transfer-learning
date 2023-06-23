@@ -1,9 +1,10 @@
 let net, webcam;
-var exampleAdded = false;
 var loadingModel = true;
-var classes = [];
+var customLabels = [];
 const webcamElement = document.getElementById("webcam");
+
 const classifier = knnClassifier.create();
+
 
 async function app() {
   try {
@@ -15,11 +16,11 @@ async function app() {
       const img = await webcam.capture();
       const result = await net.classify(img);
       const activation = net.infer(img, "conv_preds");
-      let result2;
+      let knnClassificationResult;
 
-      if (exampleAdded) {
-        result2 = await classifier.predictClass(activation);
-        document.getElementById("cam-description2").innerHTML = result2.label;
+      if (customLabels.length) {
+        knnClassificationResult = await classifier.predictClass(activation);
+        document.getElementById("cam-description2").innerHTML = knnClassificationResult.label;
       } 
       
       var predictionsTable = document.getElementById('predictions-table');
@@ -41,19 +42,17 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-
 async function addNewLabel() {
-  const input_label = document.getElementById("input_label").value;
+  const inputLabel = document.getElementById("input-label").value;
 
-  if (input_label != '' && !classes.includes(input_label)) {
-    classes.push(input_label);
+  if (inputLabel != '' && !customLabels.includes(inputLabel)) {
+    customLabels.push(inputLabel);
   }
-  document.getElementById("added_classes_list").innerHTML = classes.join(", ")
+  document.getElementById("list-added-labels").innerHTML = customLabels.join(", ")
 
   const img = await webcam.capture();
   const activation = net.infer(img, true);
-  classifier.addExample(activation, input_label);
-  exampleAdded = true;
+  classifier.addExample(activation, inputLabel);
   img.dispose();
 }
 

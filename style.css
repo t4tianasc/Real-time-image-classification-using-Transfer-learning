@@ -92,6 +92,11 @@ button {
 }
 
 #cam-description2 {
-  min-height: 10%;
+  min-height: 7%;
   background: rgba(45, 172, 49, 0.1);
+  padding: 0.5rem 1rem;
+}
+
+#div-added-labels {
+  color: gray;
 }
