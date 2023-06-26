@@ -2,15 +2,16 @@ let net, webcam;
 var loadingModel = true;
 var customLabels = [];
 const webcamElement = document.getElementById("webcam");
+const loadingModal = document.getElementById("loadingModal");
 
 const classifier = knnClassifier.create();
-
 
 async function app() {
   try {
     net = await mobilenet.load();
     webcam = await tf.data.webcam(webcamElement);
     loadingModel = false;
+    loadingModal.style.display = "none";
 
     while (true) {
       const img = await webcam.capture();
