@@ -47,13 +47,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* height: 100vh; */
 }
 
 .child-container {
+  position: relative;
   width: 40%;
   padding: 2rem;
-  /* box-sizing: border-box; */
   margin: 10px;
   background: rgba(76, 175, 80, 0.1);
 }
@@ -138,4 +137,33 @@ button {
   color: white;
   margin-top: 20px;
   font-weight: bold;
+}
+
+.child-container .tooltiptext {
+  visibility: hidden;
+  background-color: #ccc;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 103%;
+  left: 25%;
+  right: 5%;
+}
+
+.child-container .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #ccc transparent transparent transparent;
+}
+
+.child-container:hover .tooltiptext {
+  visibility: visible;
 }
